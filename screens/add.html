@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./../assets/check.png" rel="shorcut icon"/>
+    <link href="./../assets/check.png" rel="shorcut icon" />
 
     <!-- Bootstrap css  -->
     <link
@@ -20,15 +20,65 @@
     <div class="row">
       <div class="col-md-4 col-lg-3 dashB-side">
         <h1 class="dashB-title"><a href="dashboard.html">Block-Cert</a></h1>
-        <a href="./view.html"><button class="dashB-sidebtn">View Certificates</button></a>
-        <a href="#"><button class="dashB-sidebtn btn-active">Add Certificate</button></a>
-        <a href="./../index.html"><button class="dashB-sidebtn logout">Logout</button></a>
-
+        <a href="./view.html"
+          ><button class="dashB-sidebtn">View Certificates</button></a
+        >
+        <a href="#"
+          ><button class="dashB-sidebtn btn-active">Add Certificate</button></a
+        >
+        <a href="./../index.html"
+          ><button class="dashB-sidebtn logout">Logout</button></a
+        >
       </div>
       <div class="col-md-8 col-lg-9 dashB-main">
         <div class="container">
           <p class="ml-auto text-right border-bottom">Welcome, Admin</p>
-          <p class="dashB-mainCount">Certificate Count: <span>800</span></p>
+          <p>New Certificate</p>
+          <div class="row"></div>
+          <div class="fields-group add">
+            <div class="input-group">
+              <input
+                type="text"
+                name="serialNo"
+                id="serialNo"
+                class="input"
+                placeholder="serial number"
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="text"
+                name="fullName"
+                id="fullName"
+                class="input"
+                placeholder="full name"
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="text"
+                name="degree"
+                id="degree"
+                class="input"
+                placeholder="degree"
+              />
+            </div>
+            <div class="input-group">
+              <select name="university" id="university" class="input">
+                <option>University Of Ghana</option>
+                <option>University Of Cape Coast</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <input
+                type="submit"
+                name="save"
+                id="save"
+                class="input"
+                value="Save"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
