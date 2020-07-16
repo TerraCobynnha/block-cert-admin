@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./../assets/check.png" rel="shorcut icon" />
+
     <!-- Bootstrap css  -->
     <link
       rel="stylesheet"
@@ -18,15 +20,40 @@
     <div class="row">
       <div class="col-md-4 col-lg-3 dashB-side">
         <h1 class="dashB-title"><a href="dashboard.html">Block-Cert</a></h1>
-        <a href="./view.html"><button class="dashB-sidebtn btn-active">View Certificates</button></a>
-        <a href="./add.html"><button class="dashB-sidebtn">Add Certificate</button></a>
-        <a href="./../index.html"><button class="dashB-sidebtn logout">Logout</button></a>
-
+        <a href="#"
+          ><button class="dashB-sidebtn btn-active">
+            View Certificates
+          </button></a
+        >
+        <a href="./add.html"
+          ><button class="dashB-sidebtn">Add Certificate</button></a
+        >
+        <a href="./../index.html"
+          ><button class="dashB-sidebtn logout">Logout</button></a
+        >
       </div>
       <div class="col-md-8 col-lg-9 dashB-main">
         <div class="container">
           <p class="ml-auto text-right border-bottom">Welcome, Admin</p>
-          <p class="dashB-mainCount">Certificate Count: <span>800</span></p>
+          <p class="">Certificate Count: 800</p>
+
+          <div class="row" id="certs-view">
+            <!-- <div class="card-wrapper col-sm-3">
+                <div class=" card" style="width: 18rem;">
+                <img src="./../assets/check.png" class="card-img-top" alt="check" />
+                <div class="card-body">
+                    <p class="card-text">
+                        <ul class="list-group">
+                            <li class="list-group-item disabled" aria-disabled="true">1234001</li>
+                            <li class="list-group-item">Enoch Omolere</li>
+                            <li class="list-group-item">University Of Ghana</li>
+                            <li class="list-group-item">First Class Honours in Bsc. Computer Science</li>
+                        </ul>
+                    </p>
+                </div>
+                </div>
+            </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -41,5 +68,50 @@
     ></script>
     <!-- Custom js  -->
     <script src="./js/index.js"></script>
+    <script>
+      $(() => {
+        const list = [
+          {
+            name: "Enoch Omolere",
+            university: "University Of Ghana",
+            serialNo: "1234001",
+            degree: "First Class Honours in Bsc. Computer Science",
+          },
+          {
+            name: "Olga Simpson",
+            university: "University Of Ghana",
+            serialNo: "1234002",
+            degree:
+              "Second Class Honours (Upper Division) in Bsc. Computer Science",
+          },
+        ];
+
+        list.forEach((cert) => {
+          const { name, degree, serialNo, university } = cert;
+          $("#certs-view")
+            .append(`<div class="col-md-6 col-lg-4 col-xl-3 card-wrapper">
+              <div class="card">
+                <img
+                  src="./../assets/check.png"
+                  class="card-img-top"
+                  alt="check"
+                />
+                <div class="card-body">
+                  <ul class="list-group">
+                    <li class="list-group-item disabled" aria-disabled="true">
+                      ${serialNo}
+                    </li>
+                    <li class="list-group-item">${name}</li>
+                    <li class="list-group-item">${university}</li>
+                    <li class="list-group-item">
+                      ${degree}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>`);
+        });
+      });
+    </script>
   </body>
 </html>
