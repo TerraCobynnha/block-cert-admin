@@ -51,6 +51,7 @@
 
     <!-- JQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.session@1.0.0/jquery.session.min.js"></script>
     <!-- Bootstrap Js -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
@@ -58,25 +59,28 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom js  -->
-    <script src="./js/index.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
     <script>
-      $("#login").on("click", function (e) {
-        e.preventDefault();
-        const email = $("#email").val();
-        const password = $("#password").val();
+      $(() => {
+        $("#login").on("click", function (e) {
+          e.preventDefault();
+          const email = $("#email").val();
+          const password = $("#password").val();
 
-        if (email === "admin@blockcert.com" && password === "test1234") {
-          window.location.href = "./screens/dashboard.html";
-        } else {
-          $("#login-form").prepend(`
+          if (email === "admin@blockcert.com" && password === "test1234") {
+            $.session.set("loggedInEmail", email);
+            window.location.href = "./screens/dashboard.html";
+          } else {
+            $("#login-form").prepend(`
                 <div class="alert alert-danger input-group" role="alert">
             Invalid login credentials
           </div>
         `);
-          setTimeout(() => {
-            $(".alert").remove();
-          }, 3000);
-        }
+            setTimeout(() => {
+              $(".alert").remove();
+            }, 3000);
+          }
+        });
       });
     </script>
   </body>

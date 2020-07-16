@@ -21,7 +21,7 @@
         <h1 class="dashB-title"><a href="#">Block-Cert</a></h1>
         <a href="./view.html"><button class="dashB-sidebtn">View Certificates</button></a>
         <a href="./add.html"><button class="dashB-sidebtn">Add Certificate</button></a>
-        <a href="./../index.html"><button class="dashB-sidebtn logout">Logout</button></a>
+        <a id="logout"  href="#"><button class="dashB-sidebtn logout">Logout</button></a>
 
       </div>
       <div class="col-md-8 col-lg-9 dashB-main">
@@ -34,6 +34,7 @@
 
     <!-- JQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.session@1.0.0/jquery.session.min.js"></script>
     <!-- Bootstrap Js -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
@@ -41,6 +42,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom js  -->
-    <script src="./js/index.js"></script>
+    <script>
+        $(()=> {
+        })
+    </script>
+    <script src="./../js/index.js"></script>
   </body>
 </html>
