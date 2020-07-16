@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap css  -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- Custom css -->
+    <link href="./css/index.css" rel="stylesheet" />
+    <title>Block-Cert | Admin</title>
+    
+  </head>
+  <body id="login-body">
+    <h1 class="text-center text-light">Block-Cert Admin</h1>
+
+    <div class="fields-group">
+      <div class="input-group">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="input"
+          placeholder="email address"
+        />
+      </div>
+      <div class="input-group">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="input"
+          placeholder="password"
+        />
+      </div>
+      <div class="input-group">
+        <input
+          type="submit"
+          name="login"
+          id="login"
+          class="input"
+          value="Proceed"
+        />
+      </div>
+    </div>
+
+    <!-- JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom js  -->
+    <script src="./js/index.js"></script>
+    <script>
+        $("#login").on("click", function(e) {
+            alert("Inside");
+            window.location.href="./screens/dashboard.html";
+        });
+    </script>
+  </body>
+</html>
