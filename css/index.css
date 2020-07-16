@@ -26,7 +26,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
+
+.alert {
+    width: 17rem;
+}
+
+
 .fields-group {
   text-align: center;
 }

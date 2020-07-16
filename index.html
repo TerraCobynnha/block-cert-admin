@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./assets/check.png" rel="shorcut icon"/>
+    <link href="./assets/check.png" rel="shorcut icon" />
 
     <!-- Bootstrap css  -->
     <link
@@ -15,12 +15,11 @@
     <!-- Custom css -->
     <link href="./css/index.css" rel="stylesheet" />
     <title>Block-Cert | Admin</title>
-    
   </head>
   <body id="login-body">
     <h1 class="text-center text-light">Block-Cert Admin</h1>
 
-    <div class="fields-group">
+    <form id="login-form" class="fields-group">
       <div class="input-group">
         <input
           type="email"
@@ -48,7 +47,7 @@
           value="Proceed"
         />
       </div>
-    </div>
+    </form>
 
     <!-- JQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -61,10 +60,24 @@
     <!-- Custom js  -->
     <script src="./js/index.js"></script>
     <script>
-        $("#login").on("click", function(e) {
-            alert("Inside");
-            window.location.href="./screens/dashboard.html";
-        });
+      $("#login").on("click", function (e) {
+        e.preventDefault();
+        const email = $("#email").val();
+        const password = $("#password").val();
+
+        if (email === "admin@blockcert.com" && password === "test1234") {
+          window.location.href = "./screens/dashboard.html";
+        } else {
+          $("#login-form").prepend(`
+                <div class="alert alert-danger input-group" role="alert">
+            Invalid login credentials
+          </div>
+        `);
+          setTimeout(() => {
+            $(".alert").remove();
+          }, 3000);
+        }
+      });
     </script>
   </body>
 </html>

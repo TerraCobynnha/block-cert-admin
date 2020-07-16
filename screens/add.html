@@ -35,7 +35,7 @@
           <p class="ml-auto text-right border-bottom">Welcome, Admin</p>
           <p>New Certificate</p>
           <div class="row"></div>
-          <div class="fields-group add">
+          <form method="POST" id="add" class="fields-group add">
             <div class="input-group">
               <input
                 type="text"
@@ -43,6 +43,7 @@
                 id="serialNo"
                 class="input"
                 placeholder="serial number"
+                required
               />
             </div>
             <div class="input-group">
@@ -52,6 +53,7 @@
                 id="fullName"
                 class="input"
                 placeholder="full name"
+                required
               />
             </div>
             <div class="input-group">
@@ -61,6 +63,7 @@
                 id="degree"
                 class="input"
                 placeholder="degree"
+                required
               />
             </div>
             <div class="input-group">
@@ -78,7 +81,7 @@
                 value="Save"
               />
             </div>
-          </div>
+        </form>
         </div>
       </div>
     </div>
@@ -92,6 +95,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom js  -->
-    <script src="./js/index.js"></script>
+    <script src="./../js/index.js"></script>
   </body>
 </html>
